@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## 1.1.2 - 2026-09-12
+
+- Increased typography substantially across all nine layouts after the first enlargement remained too small during real-device review
+- The rapid 1.1.0 through 1.1.2 patches reflect immediate readability and title testing on the 1872 x 1404 Seeed Studio reTerminal E1003 before the initial catalog submission was merged
+
 ## 1.1.1 - 2026-09-12
 
 - Fixed the DOS header to use the configured widget title or Uptime Kuma status-page title

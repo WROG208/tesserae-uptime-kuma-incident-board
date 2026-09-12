@@ -1,7 +1,7 @@
 {
   "tesserae_compat": "1.x",
   "name": "Uptime Kuma, Incident Board",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "kind": "widget",
   "description": "Failure-first status board for a published Uptime Kuma status page.",
   "icon": "ph-heartbeat",

@@ -16,7 +16,7 @@ Designed and tested on a **Seeed Studio reTerminal E1003** with an **1872 x 1404
 - Prioritizes failures and active incidents
 - Supports up to 12 visible monitors per cell
 - Provides nine independently selectable display styles
-- Uses enlarged, e-paper-friendly typography across every layout
+- Uses substantially enlarged, e-paper-friendly typography across every layout, refined through real-device E1003 review
 - Supports forced light or dark rendering independently of the dashboard theme
 - Caches normalized data for one minute and falls back to stale data during temporary connection failures
 - Escapes remote strings before inserting them into rendered markup
