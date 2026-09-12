@@ -55,6 +55,26 @@ A playful Network Neighborhood-style presentation with classic window chrome, st
 
 A denser Program Manager-inspired presentation with overlapping status, tools, and response-history windows.
 
+## Screenshot gallery
+
+Captured from the reference Seeed Studio reTerminal E1003 dashboard at an 1872 x 1404 render target.
+
+| Constellation | Orbital Constellation |
+|---|---|
+| ![Constellation layout](screenshots/constellation.png) | ![Orbital Constellation layout](screenshots/orbital-constellation.png) |
+
+| Grafana Operations | Operations Grid |
+|---|---|
+| ![Grafana Operations layout](screenshots/grafana-operations.png) | ![Operations Grid layout](screenshots/operations-grid.png) |
+
+| Minimal Status | Terminal / NOC Console |
+|---|---|
+| ![Minimal Status layout](screenshots/minimal-status.png) | ![Terminal NOC layout](screenshots/terminal-noc.png) |
+
+| Windows 95 | Windows 3.11 |
+|---|---|
+| ![Windows 95 layout](screenshots/windows-95.png) | ![Windows 3.11 layout](screenshots/windows-311.png) |
+
 ## Requirements
 
 - A running Tesserae 1.x installation
