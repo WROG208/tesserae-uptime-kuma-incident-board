@@ -235,6 +235,9 @@ def fetch(
             # Presentation is per cell while the normalized Kuma payload is
             # shared by every cell targeting this status page.
             cached.update(presentation)
+            cached["label"] = label or str(
+                cached.get("page_title") or cached.get("label") or "Uptime Kuma"
+            )
             return cached
 
     encoded_slug = quote(slug, safe="")
@@ -259,6 +262,9 @@ def fetch(
         if cached is not None:
             cached["stale"] = True
             cached.update(presentation)
+            cached["label"] = label or str(
+                cached.get("page_title") or cached.get("label") or "Uptime Kuma"
+            )
             return cached
         return {"error": "Couldn't read that Uptime Kuma status page."}
 
@@ -269,8 +275,10 @@ def fetch(
 
     operational = bool(monitors) and counts["down"] == counts["pending"] == counts["unknown"] == 0
     config = page.get("config") if isinstance(page.get("config"), dict) else {}
+    page_title = str(config.get("title") or "Uptime Kuma")
     result = {
-        "label": label or str(config.get("title") or "Uptime Kuma"),
+        "page_title": page_title,
+        "label": label or page_title,
         **presentation,
         "operational": operational,
         "counts": counts,

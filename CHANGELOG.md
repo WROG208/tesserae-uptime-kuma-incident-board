@@ -2,6 +2,11 @@
 
 All notable changes to this project are documented here.
 
+## 1.1.3 - 2026-09-12
+
+- Fixed custom per-cell titles being replaced by a status-page title retained in the shared data cache
+- Added regression coverage for custom titles and blank-title fallback across cached cells
+
 ## 1.1.2 - 2026-09-12
 
 - Increased typography substantially across all nine layouts after the first enlargement remained too small during real-device review

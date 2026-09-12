@@ -67,6 +67,31 @@ def test_display_style_is_per_cell_even_with_shared_cache(tmp_path):
     assert result["display_style"] == "grafana"
 
 
+def test_custom_title_is_per_cell_even_with_shared_cache(tmp_path):
+    page = {"config": {"title": "Orlando"}, "publicGroupList": []}
+    beats = {"heartbeatList": {}, "uptimeList": {}}
+
+    def fake(url, **kwargs):
+        return beats if "/heartbeat/" in url else page
+
+    server = load_server(fake)
+    common = {"base_url": "http://kuma:3001", "status_page_slug": "lab"}
+    first = server.fetch(
+        {**common, "label": "Network One"},
+        {},
+        ctx={"data_dir": str(tmp_path), "fresh": True},
+    )
+    second = server.fetch(
+        {**common, "label": "My Homelab"},
+        {},
+        ctx={"data_dir": str(tmp_path)},
+    )
+    defaulted = server.fetch(common, {}, ctx={"data_dir": str(tmp_path)})
+    assert first["label"] == "Network One"
+    assert second["label"] == "My Homelab"
+    assert defaulted["label"] == "Orlando"
+
+
 def test_dos_display_style_is_accepted(tmp_path):
     page = {"config": {"title": "Lab"}, "publicGroupList": []}
     beats = {"heartbeatList": {}, "uptimeList": {}}
