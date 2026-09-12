@@ -2,6 +2,10 @@
 
 All notable changes to this project are documented here.
 
+## 1.1.1 - 2026-09-12
+
+- Fixed the DOS header to use the configured widget title or Uptime Kuma status-page title
+
 ## 1.1.0 - 2026-09-12
 
 - Added the DOS Network Manager display style
