@@ -1,0 +1,207 @@
+{
+  "tesserae_compat": "1.x",
+  "name": "Uptime Kuma, Incident Board",
+  "version": "1.0.0",
+  "kind": "widget",
+  "description": "Failure-first status board for a published Uptime Kuma status page.",
+  "icon": "ph-heartbeat",
+  "supports": {
+    "sizes": ["xs", "sm", "md", "lg"]
+  },
+  "cell_options": [
+    {
+      "name": "base_url",
+      "type": "string",
+      "label": "Uptime Kuma URL",
+      "default": "http://localhost:3001",
+      "required": true,
+      "help": "Base URL of Uptime Kuma, for example http://192.168.1.20:3001."
+    },
+    {
+      "name": "status_page_slug",
+      "type": "string",
+      "label": "Status page slug",
+      "default": "homelab",
+      "required": true,
+      "help": "The final part of the published status-page URL."
+    },
+    {
+      "name": "label",
+      "type": "string",
+      "label": "Title",
+      "default": "",
+      "help": "Optional title. The Kuma status-page title is used when blank."
+    },
+    {
+      "name": "display_style",
+      "type": "select",
+      "label": "Display style",
+      "default": "constellation",
+      "choices": [
+        {"value": "constellation", "label": "Constellation"},
+        {"value": "orbital", "label": "Orbital Constellation"},
+        {"value": "grafana", "label": "Grafana Operations"},
+        {"value": "grid", "label": "Operations Grid"},
+        {"value": "minimal", "label": "Minimal Status"},
+        {"value": "terminal", "label": "Terminal / NOC Console"},
+        {"value": "windows95", "label": "Windows 95"},
+        {"value": "windows311", "label": "Windows 3.11"}
+      ],
+      "help": "Choose the presentation independently for each dashboard cell."
+    },
+    {
+      "name": "color_scheme",
+      "type": "select",
+      "label": "Color scheme",
+      "default": "auto",
+      "choices": [
+        {"value": "auto", "label": "Follow Tesserae"},
+        {"value": "light", "label": "Light"},
+        {"value": "dark", "label": "Dark with light text"}
+      ],
+      "help": "Dark mode is rendered by this widget even if the dashboard theme is light."
+    },
+    {
+      "name": "density",
+      "type": "select",
+      "label": "Information density",
+      "default": "comfortable",
+      "choices": [
+        {"value": "comfortable", "label": "Comfortable"},
+        {"value": "compact", "label": "Compact"}
+      ]
+    },
+    {
+      "name": "show_history",
+      "type": "boolean",
+      "label": "Show heartbeat history",
+      "default": true
+    },
+    {
+      "name": "monitor_limit",
+      "type": "number",
+      "label": "Maximum monitors",
+      "default": 8,
+      "help": "Limits how many monitors are drawn. Values from 1 through 12 are accepted."
+    },
+    {
+      "name": "orbital_topology",
+      "type": "select",
+      "label": "Orbital topology",
+      "default": "automatic",
+      "choices": [
+        {"value": "automatic", "label": "Automatic hierarchy"},
+        {"value": "star", "label": "Star"},
+        {"value": "orbit", "label": "Orbit only"}
+      ]
+    },
+    {
+      "name": "show_secondary_lines",
+      "type": "boolean",
+      "label": "Show secondary connections",
+      "default": true
+    },
+    {
+      "name": "relationship_overrides",
+      "type": "textarea",
+      "label": "Relationship overrides",
+      "default": "",
+      "help": "Optional Child=Parent entries, one per line. Automatic hierarchy also recognizes names such as 'Media Server Tautulli' as children of 'Media Server'."
+    },
+    {
+      "name": "radar_background",
+      "type": "select",
+      "label": "Radar background",
+      "default": "rings_grid",
+      "choices": [
+        {"value": "rings_grid", "label": "Rings and grid"},
+        {"value": "rings", "label": "Rings only"},
+        {"value": "grid", "label": "Grid only"},
+        {"value": "none", "label": "None"}
+      ]
+    },
+    {
+      "name": "orbital_node_size",
+      "type": "select",
+      "label": "Orbital node size",
+      "default": "medium",
+      "choices": [
+        {"value": "small", "label": "Small"},
+        {"value": "medium", "label": "Medium"},
+        {"value": "large", "label": "Large"}
+      ]
+    },
+    {
+      "name": "connection_thickness",
+      "type": "select",
+      "label": "Connection thickness",
+      "default": "medium",
+      "choices": [
+        {"value": "thin", "label": "Thin"},
+        {"value": "medium", "label": "Medium"},
+        {"value": "heavy", "label": "Heavy"}
+      ]
+    },
+    {
+      "name": "show_signal_log",
+      "type": "boolean",
+      "label": "Show signal log",
+      "default": true
+    },
+    {
+      "name": "show_summary_metrics",
+      "type": "boolean",
+      "label": "Show summary metrics",
+      "default": true
+    },
+    {
+      "name": "node_details",
+      "type": "select",
+      "label": "Node details",
+      "default": "full",
+      "choices": [
+        {"value": "name", "label": "Name only"},
+        {"value": "status", "label": "Name and status"},
+        {"value": "full", "label": "Full details"}
+      ]
+    },
+    {
+      "name": "heartbeat_length",
+      "type": "select",
+      "label": "Heartbeat length",
+      "default": "24",
+      "choices": [
+        {"value": "8", "label": "8 checks"},
+        {"value": "12", "label": "12 checks"},
+        {"value": "24", "label": "24 checks"}
+      ]
+    },
+    {
+      "name": "accent_color",
+      "type": "color",
+      "label": "Orbital accent color",
+      "default": "#9bd36e"
+    },
+    {
+      "name": "orbital_darkness",
+      "type": "select",
+      "label": "Orbital darkness",
+      "default": "pure_black",
+      "choices": [
+        {"value": "standard", "label": "Standard dark"},
+        {"value": "pure_black", "label": "Pure black"}
+      ]
+    }
+  ],
+  "settings": [],
+  "render": {
+    "dither": "none",
+    "needs_network": true
+  },
+  "design": {
+    "palette": "extended"
+  },
+  "requires": [
+    "network:*"
+  ]
+}
