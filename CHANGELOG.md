@@ -2,6 +2,14 @@
 
 All notable changes to this project are documented here.
 
+## 1.1.4 - 2026-09-12
+
+- Windows 95 summary badge, per-monitor glyphs, and taskbar state now follow the real health and cache state instead of always reading "ALL CLEAR", "✓", and "LIVE"
+- Terminal footer reports the actual alarm count instead of a fixed "NO ACTIVE ALARMS", and the prompt shows the configured status-page slug
+- Windows 3.11 Response History draws the fleet's recent heartbeat pings instead of a generated pattern; its footer reflects cached data
+- Constellation, Orbital, Grafana, Grid, Minimal, Terminal, and DOS headline chrome switch to the alert colour when anything is down or an incident is open
+- Grafana banner copy no longer says "no hidden credentials"
+
 ## 1.1.3 - 2026-09-12
 
 - Fixed custom per-cell titles being replaced by a status-page title retained in the shared data cache
