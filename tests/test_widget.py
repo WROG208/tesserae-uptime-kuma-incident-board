@@ -46,6 +46,7 @@ def test_fetch_normalizes_status_page(tmp_path):
         ctx={"data_dir": str(tmp_path), "fresh": True},
     )
     assert result["label"] == "Homelab"
+    assert result["slug"] == "homelab"
     assert result["operational"] is False
     assert result["counts"]["down"] == 1
     assert result["monitors"][0]["name"] == "Media Service"

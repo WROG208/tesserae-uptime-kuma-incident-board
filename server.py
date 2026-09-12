@@ -278,6 +278,7 @@ def fetch(
     page_title = str(config.get("title") or "Uptime Kuma")
     result = {
         "page_title": page_title,
+        "slug": slug,
         "label": label or page_title,
         **presentation,
         "operational": operational,
