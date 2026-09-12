@@ -67,6 +67,22 @@ def test_display_style_is_per_cell_even_with_shared_cache(tmp_path):
     assert result["display_style"] == "grafana"
 
 
+def test_dos_display_style_is_accepted(tmp_path):
+    page = {"config": {"title": "Lab"}, "publicGroupList": []}
+    beats = {"heartbeatList": {}, "uptimeList": {}}
+
+    def fake(url, **kwargs):
+        return beats if "/heartbeat/" in url else page
+
+    server = load_server(fake)
+    result = server.fetch(
+        {"base_url": "http://kuma:3001", "status_page_slug": "lab", "display_style": "dos"},
+        {},
+        ctx={"data_dir": str(tmp_path), "fresh": True},
+    )
+    assert result["display_style"] == "dos"
+
+
 def test_orbital_options_are_validated(tmp_path):
     page = {"config": {"title": "Lab"}, "publicGroupList": []}
     beats = {"heartbeatList": {}, "uptimeList": {}}

@@ -161,7 +161,7 @@ def fetch(
     label = str(options.get("label") or "").strip()
     display_style = str(options.get("display_style") or "constellation").strip()
     if display_style not in {
-        "constellation", "orbital", "grafana", "grid", "minimal", "terminal", "windows95", "windows311"
+        "constellation", "orbital", "grafana", "grid", "minimal", "terminal", "dos", "windows95", "windows311"
     }:
         display_style = "constellation"
     color_scheme = str(options.get("color_scheme") or "auto").strip()

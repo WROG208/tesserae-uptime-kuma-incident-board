@@ -1,6 +1,6 @@
 # Uptime Kuma Incident Board for Tesserae
 
-A configurable, failure-first Uptime Kuma dashboard widget for [Tesserae](https://github.com/dmellok/tesserae). It reads a published Uptime Kuma status page and turns its public monitor data into eight presentations ranging from minimal status lists to an orbital network map and retro operating-system interfaces.
+A configurable, failure-first Uptime Kuma dashboard widget for [Tesserae](https://github.com/dmellok/tesserae). It reads a published Uptime Kuma status page and turns its public monitor data into nine presentations ranging from minimal status lists to an orbital network map and retro operating-system interfaces.
 
 Created and published by **N4ASS**. Licensed under the MIT License.
 
@@ -15,7 +15,8 @@ Designed and tested on a **Seeed Studio reTerminal E1003** with an **1872 x 1404
 - Shows monitor names, response times, failure messages, 24-hour uptime, and recent heartbeats
 - Prioritizes failures and active incidents
 - Supports up to 12 visible monitors per cell
-- Provides eight independently selectable display styles
+- Provides nine independently selectable display styles
+- Uses enlarged, e-paper-friendly typography across every layout
 - Supports forced light or dark rendering independently of the dashboard theme
 - Caches normalized data for one minute and falls back to stale data during temporary connection failures
 - Escapes remote strings before inserting them into rendered markup
@@ -46,6 +47,10 @@ A restrained overview and compact failure-first list for smaller cells or dashbo
 ### Terminal / NOC Console
 
 A dark monospace network-operations console with an inferred ASCII hierarchy, aligned health data, response traces, an event stream, and prominent incident alarms.
+
+### DOS Network Manager
+
+An authentic 16-color DOS-style network manager with cyan box-drawing panels, a keyboard menu, large health summary, aligned monitor table, block-character response traces, and event log.
 
 ### Windows 95
 
@@ -102,7 +107,7 @@ Add **Uptime Kuma, Incident Board** to a dashboard cell and configure:
 | Uptime Kuma URL | Base address of Kuma, such as `http://192.168.1.20:3001` | `http://localhost:3001` |
 | Status page slug | Final component of the published status-page URL | `homelab` |
 | Title | Optional cell heading; the Kuma page title is used when empty | Empty |
-| Display style | Selects one of the eight renderers | Constellation |
+| Display style | Selects one of the nine renderers | Constellation |
 | Color scheme | Follow Tesserae, force light, or force dark | Follow Tesserae |
 | Information density | Comfortable or compact spacing | Comfortable |
 | Show heartbeat history | Shows or hides recent check strips | On |
@@ -221,7 +226,7 @@ The repository contains:
 ```text
 plugin.json          Tesserae manifest and cell options
 server.py            Status-page fetch, normalization, validation, and cache
-client.js            All eight responsive renderers
+client.js            All nine responsive renderers
 tests/test_widget.py Server normalization and validation tests
 ```
 

@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here.
 
+## 1.1.0 - 2026-09-12
+
+- Added the DOS Network Manager display style
+- Enlarged typography throughout all nine layouts for improved readability on e-paper displays
+- Added server validation and test coverage for the DOS display selection
+
 ## 1.0.0 - 2026-09-12
 
 - Initial public release by N4ASS
