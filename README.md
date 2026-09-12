@@ -76,9 +76,16 @@ Captured from the reference Seeed Studio reTerminal E1003 dashboard at an 1872 x
 |---|---|
 | ![Minimal Status layout](screenshots/minimal-status.png) | ![Terminal NOC layout](screenshots/terminal-noc.png) |
 
-| DOS Network Manager | |
-|---|---|
-| ![DOS Network Manager layout](screenshots/dos-network-manager.png) | |
+<table>
+  <tr>
+    <th width="50%">DOS Network Manager</th>
+    <th width="50%"></th>
+  </tr>
+  <tr>
+    <td width="50%"><img src="screenshots/dos-network-manager.png" alt="DOS Network Manager layout"></td>
+    <td width="50%"></td>
+  </tr>
+</table>
 
 | Windows 95 | Windows 3.11 |
 |---|---|
